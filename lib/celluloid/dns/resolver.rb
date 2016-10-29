@@ -22,7 +22,6 @@ require_relative 'handler'
 
 require 'securerandom'
 require 'celluloid/io'
-require 'addressable'
 
 module Celluloid::DNS
 	class InvalidProtocolError < StandardError
@@ -72,7 +71,6 @@ module Celluloid::DNS
 			end
 			
 			# ..else if we have a string, we need to do some basic processing:
-			name = Addressable::IDNA.to_ascii(name) unless name.ascii_only?
 			if name.end_with? '.'
 				return Resolv::DNS::Name.create(name)
 			else

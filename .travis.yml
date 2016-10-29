@@ -17,6 +17,4 @@ matrix:
     - rvm: rbx-2 
     - rvm: ruby-head
     - rvm: jruby-head
-env: COVERAGE=true
-notifications:
-  irc: "irc.freenode.org#celluloid"
+env: COVERAGE=false
